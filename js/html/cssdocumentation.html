@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<style>
+    html,
+body {
+  min-width: 290px;
+  color: #4d4e53;
+  background-color: wheat;
+  font-family: 'Open Sans', Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#navbar {
+  position: fixed;
+  min-width: 290px;
+  top: 0px;
+  left: 0px;
+  width: 300px;
+  height: 100%;
+  border-right: solid;
+  border-color: rgba(0, 22, 22, 0.4);
+}
+
+header {
+  color: black;
+  margin: 10px;
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: thin;
+}
+
+#main-doc header {
+  text-align: left;
+  margin: 0px;
+}
+
+#navbar ul {
+  height: 88%;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden; 
+}
+
+#navbar li {
+  color: #4d4e53;
+  border-top: 1px solid;
+  list-style: none;
+  position: relative;
+  width: 100%;
+}
+
+#navbar a {
+  display: block;
+  padding: 10px 30px;
+  color: #4d4e53;
+  text-decoration: none;
+  cursor: pointer; 
+}
+
+#main-doc {
+  position: absolute;
+  margin-left: 310px;
+  padding: 20px;
+  margin-bottom: 110px;
+}
+
+section article {
+  color: #4d4e53;
+  margin: 15px;
+  font-size: 0.96em;
+}
+
+section li {
+  margin: 15px 0px 0px 20px;
+}
+
+code {
+  display: block;
+  text-align: left;
+  white-space: pre-line;
+  position: relative;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 2;
+  background-color: rgba(144, 238, 144, 0.788);
+  padding: 15px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: larger;
+}
+
+@media only screen and (max-width: 815px) {
+  /* For mobile phones: */
+  #navbar ul {
+    border: 1px solid;
+    height: 207px;
+  }
+
+  #navbar {
+    background-color: white;
+    /* position: absolute; */
+    top: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-height: 275px;
+    border: none;
+    /* z-index: 1; */
+    border-bottom: 2px solid;
+  }
+h1{
+    text-transform: uppercase;
+}
+  #main-doc {
+    position: relative;
+    margin-left: 0px;
+    margin-top: 270px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #main-doc {
+    margin-left: -10px;
+  }
+
+  
+  code {
+    margin-left: -20px;
+    width: 100%;
+    padding: 15px;
+    padding-left: 10px;
+    padding-right: 45px;
+    min-width: 233px;
+  }
+}
+
+</style>
+
+    <main id="main-doc">
+        <nav id=navbar>
+          <header>CSS Documentation</header>
+         <ul>
+          <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+          <li>
+            <a class="nav-link" href="#Advantages"
+              >Advantages</a
+            >
+          </li>
+          <li>
+            <a class="nav-link" href="#External_css">External css</a>
+          </li>
+          <li><a class="nav-link" href="#Inline_css">Inline css</a></li>
+          <li><a class="nav-link" href="#Embedded_css">Embedded css</a></li>
+          <li>
+            <a class="nav-link" href="#Color">Color</a>
+          </li>
+          <li><a class="nav-link" href="#Shadow">Shadow</a></li>
+          <li><a class="nav-link" href="#Background_image">Background image</a></li>
+          <li><a class="nav-link" href="#CSS_syntax">CSS syntax</a></li>
+          <li><a class="nav-link" href="#Type_selector">Type selector</a></li>
+          <li>
+            <a class="nav-link" href="#Class_selector">Class selector</a>
+          </li>
+          <li><a class="nav-link" href="#Id_selector">Id selector</a></li>
+          <li>
+            <a class="nav-link" href="#Child_selector"
+              >Child selector</a
+            >
+          </li>
+          <li><a class="nav-link" href="#Attribute_selector">Attribute selector</a></li>
+          
+          <li><a class="nav-link" href="#Multiple_style_rule">Multiple style rule</a></li>
+        </ul>
+      </nav>
+      <section  id="Introduction" class="main-section" >
+         <header>Introduction</header>
+         
+         <p>Cascading Style Sheets, fondly referred to as CSS,
+           is a simple design language intended to simplify the process of making web pages presentable.
+    
+    
+          CSS handles the look and feel part of a web page. Using CSS, you can control the color of the text, the style of fonts, the spacing between paragraphs, 
+          how columns are sized and laid out, what background images or colors are used, as well as a variety of other effects.</p>
+    
+    
+          <ul>
+              <li>CSS is among the core languages of the open web and is standardized across Web browsers according to W3C specifications. Previously, development of various parts of CSS specification was done synchronously, which allowed versioning of the latest recommendations. 
+                  You might have heard about CSS1, CSS2.1, CSS3. However,
+                   CSS4 has never become an official version.</li>
+    
+               <li>
+                  From CSS3, the scope of the specification increased significantly and the progress on different 
+                  CSS modules started to differ so much, that it became more effective to develop and release
+                   recommendations separately per module. Instead of versioning the CSS specification,
+                    W3C now periodically takes a snapshot of the latest stable state of the CSS specification.
+               </li>    
+    
+          </ul>
+      </section>
+      <section id="Advantages" class="main-section" >
+       <header>Advantages</header>
+          <p>
+              This guide assumes you have the following basic background:
+          </p>
+          
+          <ul>
+              <li>
+                  <strong> CSS saves time </strong> - You can write CSS once and then reuse the same sheet in multiple HTML pages.
+                   You can define a style for each HTML element and apply it to as many web pages as you want.
+              </li>
+              <li>
+                  <strong> Pages load faster</strong>- If you are using CSS, you do not need to write HTML tag attributes every time. Just write one CSS rule 
+                  of a tag and apply it to all the occurrences of that tag.
+                   So, less code means faster download times.
+              </li>
+              <li>
+                <strong> Multiple Device Compatibility</strong>- Style sheets allow content to be optimized for more than one type of device. By using the same HTML document, 
+                different versions of a website can be presented for 
+                handheld devices such as PDAs and cellphones or for printing.
+              </li>
+          </ul>
+    
+      </section >
+    
+    
+      <section id="External_css" class="main-section">
+          <header>External css</header>
+          <p>
+              The external style sheet is generally used when you want to make changes on multiple pages. 
+              It is ideal for this condition because it facilitates you to change the look of the entire web
+               site by changing just one file.
+    
+               It uses the <link> tag on every pages and the <link> tag should be put inside the head section.
+    
+             Example:
+          </p>
+    
+          
+        <code>
+          <pre>
+                 &lthead&gt  
+                  &ltlink rel="stylesheet" type="text/css" href="mystyle.css"&gt 
+                  &lthead&gt
+          </pre> 
+        </code>
+        <p>The external style sheet may be written in any text editor but must be saved with a .
+            `css extension. This file should not contain HTML elements.
+      </p>
+      </section>
+    
+      <section id="Inline_css" class="main-section">
+          <header>Inline css</header>
+          <p>
+              The inline CSS is also a method to insert style sheets in HTML document. This method mitigates some advantages of style sheets so it is advised to use this method sparingly.
+    
+              If you want to use inline CSS, you should use the style attribute to the relevant tag.
+              
+              Syntax:
+          </p>
+    
+            
+        <code>
+          <pre>
+                 &lthead&gt  
+                 &lthtmltag&gt style="cssproperty1:value; cssproperty2:value;"> &lt/htmltag&gt
+                  &lthead&gt
+          </pre> 
+        </code>
+    
+        <p>example</p>
+    
+        <code>
+          <pre>
+              &lth2 style="color:red;margin-left:40px;"&gtInline CSS is applied on this heading.&lt/h2&gt  
+              &ltp&gtThis paragraph is not affected.&lt/p&gt 
+          </pre>
+          </code> 
+      </section>
+    
+      <section id="Embedded_css" class="main-section">
+          <header>Embedded css</header>
+         <p>
+    
+    
+          The internal style sheet is used to add a unique style for a single document.
+           It is defined in &lthead&gt section of the HTML page inside the &ltstyle&gt tag.
+    
+           example:
+         </p>
+         <code>
+          <pre>
+              &ls!DOCTYPE html&gt
+              &lthtml&gt  
+              &lshead&gt  
+          &lsstyle&gt  
+              body {  
+                  background-color: linen;  
+              }  
+              h1 {  
+                  color: red;  
+                  margin-left: 80px;  
+              }   
+              &lt/style&gt  
+              &lt/head&gt  
+              &ltbody&gt  
+              &lth1&gtThe internal style sheet is applied on this heading.&ls/h1&gt  
+              &ltp&gtThis paragraph will not be affected.&ls/p&gt  
+              &lt/body&gt  
+              &lt/html&gt  
+          </pre> 
+        </code>
+    
+      </section>
+    
+      <section id="Color" class="main-section">
+          <header>Color</header>
+          <p>The color property in CSS is used to set the color of HTML elements. Typically, this property is used to set the background color or the font color of an element.
+    
+              In CSS, we use color values for specifying the color. We can also use this property for the border-color and other decorative effects.
+              
+              We can define the color of an element by using the following ways:</p>
+    
+              <ul>
+              <li>RGB format</li>
+              <li>RGBA format</li>
+              <li>Hexadecimal notation</li>
+              <li>HSL</li>
+              <li>HSLA</li>
+              <li>Built in colour</li>
+          </ul>
+      
+    
+      </section>
+    
+      <section id="Shadow" class="main-section">
+          <header>Shadow</header>
+          <p>It is used to add shadow-like effects around the frame of an element.</p>
+    
+          <p>example:</p>
+    
+          <code>
+              <pre>
+                  &lt!DOCTYPE html&gt   
+                  &lthtml&gt   
+                      &lthead&gt   
+                          &lttitle&gtCSS box-shadow Property&lt/title&gt   
+                          
+                          &ltstyle&gt   
+                              div  
+                              {  
+                              border: 1px solid;   
+                              padding: 10px;   
+                              }  
+                              #hvb   
+                              {   
+                                  /* box-shadow: h-offset v-offset blur */   
+                                  box-shadow: 5px 10px 10px;   
+                              }   
+                              #spr  
+                              {  
+                                  /* box-shadow: h-offset v-offset blur spread */  
+                                  box-shadow: 5px 10px 10px 10px; 
+              </pre> 
+            </code>
+      </section>
+    
+      <section id="Background_image" class="main-section">
+          <header>Background image</header>
+          <p>The background-attachment property is used to specify that the background image is fixed
+               or scroll with the rest of the page in the browser window.
+    
+              This property has three values scroll, fixed, and local. Its default value is scroll, 
+              which causes the element to not scroll with its content. The local value of this property
+               causes the element to scroll with the content. If we set the value to fixed, the background
+                image will not move during scrolling in the browser.
+              
+              This CSS property can support multiple background images. We can specify a different value
+               of the background-attachment property for each background-image,
+               separated by commas. Every image will match with the corresponding value of this property.</p>
+    
+               <p><strong>Example</strong></p>
+               <p>
+                  In this example, we are using the scroll value of the background-attachment property,
+                   which is the default behavior. So when the page is scrolled, the background scrolls with it.</p>
+    
+    
+                
+            <code><pre>
+    
+                &lt!DOCTYPE html&gt  
+                &lthtml&gt  
+                &lthead&gt  
+                &lttitle&gt  
+                background-attachment property  
+                &lt/title&gt  
+                  
+                &ltstyle&gt  
+                #example {  
+                background-image:  url("lion.png");  
+                font-size: 35px;  
+                border: 4px solid red;  
+                color: white;  
+                background-position: center;  
+                background-color: green;      
+                background-repeat: no-repeat;  
+                background-attachment: scroll;  
+                }  
+                  
+                &lt/style&gt  
+                &lt/head&gt  
+                  
+                &ltbody&gt  
+            </pre></code>
+      </section>
+      <section id="CSS_syntax" class="main-section" >
+        <header>CSS syntax</header>
+        <p>
+          The basic goal of the Cascading Stylesheet (CSS) language is to allow a browser engine to paint elements of the page with specific features, like colors, positioning, or decorations. The CSS syntax reflects this goal and its basic building blocks are:
+    
+          The property which is an identifier, that is a human-readable name, that defines which feature is considered.
+          
+          The value which describe how the feature must be handled by the engine. Each property has a set of valid values,
+           defined by a formal grammar, as well as a semantic meaning, implemented by the browser engine.
+        </p>
+    
+        <code>
+          <pre>
+    
+              element { style properties }
+    
+              span {
+              background-color: skyblue;
+              }
+          </pre> 
+        </code>
+    
+      </section>
+      <section id="Type_selector" class="main-section" >
+          <header>Type selector</header>
+          <p>
+    
+              The CSS type selector matches elements by node name. 
+              In other words, it selects all elements of the given type within a document.
+    
+          </p>
+    
+          <code>
+              <pre>
+                  
+            a {
+              color: red;
+             }
+              </pre>
+          </code>
+      
+    
+      </section>
+      <section id="Class_selector" class="main-section" >
+              <header>Class selector</header>
+          <p>
+              The CSS class selector matches elements based on the contents of their class attribute.
+          </p>
+          <p>
+              <strong>Syntax</strong>
+          </p>
+    
+          <code>
+                  .class_name { style properties }
+          </code>
+    
+          <p>
+              <strong>Example</strong>
+          </p>
+    
+          <code>
+              <pre>
+                  .red {
+                      color: #f33;
+                      }
+                      
+                      .yellow-bg {
+                      background: #ffa;
+                      }
+          
+              </pre>
+          </code>
+    
+      </section>
+    
+      <section id="Id_selector" class="main-section" >
+          <header>Id selector</header>
+          <p>The CSS ID selector matches an element based on the value of the element’s id attribute. 
+              In order for the element to be selected, its id attribute must match exactly the value given in the selector.</p>
+    
+              <p><strong>
+                  syntax
+              </strong></p>
+    
+              <code>
+                  <pre>
+                      #id_value { style properties }
+    
+                      /* The element with id="demo" */
+                      #demo {
+                      border: red 2px solid;
+                      }
+                  </pre>
+              </code>
+              <p><strong>example</strong></p>
+    
+              <code>
+                  <pre>
+                      #identified {
+                          background-color: skyblue;
+                          }
+                  </pre>
+              </code>
+      </section>
+      <section id="Child_selector" class="main-section" >
+          <header>Child selector</header>
+          <p>The child combinator (>) is placed between two CSS selectors.
+               It matches only those elements matched by the second selector that are the direct children of element
+               s matched by the first.</p>
+               <p><strong>syntax</strong></p>
+    
+               <code>
+                  selector1 > selector2 { style properties }
+              </code>
+               <p><strong>example</strong></p>
+               <code>
+                  <pre>
+                      span {
+                          background-color: white;
+                          }
+                          
+                          div > span {
+                          background-color: DodgerBlue;
+                          }
+                      }
+                  </pre>
+              </code>
+      </section>
+      <section id="Attribute_selector" class="main-section" >
+          <header>Attribute selector</header>
+          <p>The CSS attribute selector matches elements based on the presence or value of a given attribute.
+    
+          </p>
+    
+          <code>
+              <pre>
+                  elements with a title attribute 
+                  a[title] {
+                  color: purple;
+                  }
+              </pre>
+          </code>
+    
+          <code>
+              <pre>
+                   elements with an href matching "https://example.org" 
+                  a[href="https://example.org"] {
+                  color: green;
+                  }
+              </pre>
+          </code>
+          <p><strong>example</strong></p>
+    
+          <code>
+              <pre>
+                  a {
+                      color: blue;
+                      }
+                      
+                      Internal links, beginning with "#" 
+                      a[href^="#"] {
+                      background-color: gold;
+                      }
+                      
+                      Links with "example" anywhere in the URL 
+                      a[href*="example"] {
+                      background-color: silver;
+                      }
+              </pre>
+          </code>
+      </section>
+      <section id="Multiple_style_rule" class="main-section" >
+          <header>Multiple style rule</header>
+          <p>
+              You may need to define multiple style rules for a single element. 
+              You can define these rules to combine multiple properties and 
+              corresponding values into a single block as defined in the following 
+              
+          </p>
+          <strong>example:</strong>
+          <code>
+              <pre>
+                  h1 {
+                      color: #36C; font-weight: normal;
+                      letter-spacing: .4em;
+                      margin-bottom: 1em;
+                      text-transform: lowercase;
+                      }
+              </pre>
+          </code>
+          <p>Here all the property and value pairs are separated by a semicolon (;).
+               You can keep them in a single line or multiple lines.
+                For better readability, we keep them on separate lines.</p>
+    
+      </section>
+    
+      
+    
+    </main>
+    
+</body>
+</html>
