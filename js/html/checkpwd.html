@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Password</title>
+</head>
+<body>
+
+    <style>
+        body{
+            background-color: rgba(0, 255, 255, 0.249);
+        }
+        h1{
+            font-family: serif;
+            font-size: x-large;
+            text-align: center;
+            text-transform: uppercase;
+            color: rgba(255, 0, 0, 0.508);
+        }
+        .legend{
+            font-family: monospace;
+            font-size: large;
+            text-transform: capitalize;
+            padding-bottom: 0.5em;
+            padding-top: 0.5em;
+            font-style: bold;
+        }
+     #name{
+         margin-bottom: 1em;
+     }
+    </style>
+        <h1>create a netflix account</h1>
+        <h2 id="new"></h2>
+        <legend class="legend">Enter your details</legend>
+        
+         <label for="name">Name: </label>
+         <input type="text" name="name" id="myName"><br>  
+         <label for="email">Email: </label>     
+        <input type="email" name="email" id="email"><br>
+
+        <legend class="legend">Enter a strong password</legend> 
+        <label for="password">Password: </label>
+        <input type="password" name="password" id="password">
+   
+    <p></p>
+    <button>Check Password</button>
+
+   
+    <script>
+        let password = document.getElementById('password');
+        let para = document.querySelector('p')
+        let button = document.querySelector('button')
+
+        para.style.backgroundColor = 'cyan'
+        para.style.padding = '2em'
+        para.style.borderBottom = '7px solid red'
+        let checker = () =>{
+            let word = password.value;
+            let statement = 'Hurray! Strong Password';
+            
+            
+            let regCap = /[A-Z]/g
+            let regLow = /[a-z]/g
+            let regSpe = /[^\w\s,.]/g
+            let regNum =   /[0-9]/g
+
+            if(word.match(regCap) === null || word.match(regLow) === null || word.match(regSpe) === null || word.match(regNum) === null ){
+                statement = 'you need uppercase, lowercase, special character and number to create a word'
+            para.style.backgroundColor = 'red'
+            para.style.padding = '2em'
+            para.style.border = '5px solid salmon'
+            }
+
+            else{
+
+                if(word.match(regCap).length !== 2){
+                    statement = 'You need two UpperCase letters\n'
+                }
+                if(word.match(regLow).length !== 2){
+                    statement = 'You need two LowerCase letters\n'
+                }
+                if(word.match(regSpe).length !== 2){
+                    statement = 'You need two Special Characters\n'
+                }
+                if(word.match(regNum).length !== 2){
+                    statement = 'You need two Numbers\n'
+                }
+                
+                para.style.backgroundColor = 'green'
+                para.style.padding = '2em'
+                para.style.border = '5px solid red'
+               
+            }
+        para.textContent = statement;
+        let heading = document.getElementById('myName')
+        let para2 = document.getElementById('new')
+        para2.textContent = 'You have successfully created an account  '+ '' + heading.value
+       
+        }
+    
+
+        button.addEventListener('click', checker)
+
+    </script>
+</body>
+</html>
