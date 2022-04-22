@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/bmi.css">
+    <title>BMI CALCULATOR</title>
+</head>
+<body>
+    
+      
+    <main>
+        <div class="one">
+           <section>
+            <h1>BMI CALCULATOR</h1>
+            <div class="label">
+
+                <label for="weight">Weight:
+                </label>
+    
+                <input type="number" name="number" id="weight" placeholder="input your weight in kg"><br>  
+            </div>
+            <div class="label">
+
+                <label for="Height">Height:
+    
+                </label>     
+                    <input type="number" name="number" id="height" placeholder="input your height in kg"><br>
+            </div>
+   
+           <button id="btn">CALCULATOR</button>
+           <button type="reset" id="btn2">CLEAR</button>
+           </section>
+        </div>
+        <div class="three
+        ">
+
+        </div>
+        <div class="two">
+            <div id="two">
+                <!-- <figure>
+                    <img src="../../images/OIP (1).jpg" alt="pics1">
+                </figure> -->
+                <h1>RESULTS</h1>
+                <figure>
+                    <img src="../../images/OIP.jpg" alt="pics1">
+                </figure>
+                <p id="result"></p>
+
+                <section class="underweight">
+                    <h2>Underweight</h2>
+                    <h3>Recommendation</h3>
+                    <ul>
+
+                        <li>Eat smaller meals</li>
+                        <li>Eat 200-250 extra calories each day</li>
+                        <li>Drink whole milk, not slim</li>
+                    </ul>
+                </section>
+                <section class="normal"> 
+                    <h2>Normal</h2>
+                    <h3>Recommendation</h3>
+                    <ul>
+
+                        <li>Eat healthy meals</li>
+                        <li>Keep up the diet</li>
+                        <li>Eat more vegetables</li>
+                    </ul>
+                </section>
+                <section class="overweight"> 
+                    <h2>Overweight</h2>
+                    <h3>Recommendation</h3>
+                    <ul>
+
+                        <li>Less screen time and more sleep</li>
+                        <li>Eating healthy foods</li>
+                        <li>Be more physically active</li>
+                    </ul>
+                </section>
+                <section class="obesity"> 
+                    <h2>Obesity</h2>
+                    <h3>Recommendation</h3>
+                    <ul>
+
+                        <li>Reducing the fat, sugar and salt content of processed foods you take</li>
+                        <li>engage in regular physical activity (60 minutes a day for children and 150 minutes spread through the week for adults).</li>
+                        <li>increase consumption of fruit and vegetables, as well as legumes, whole grains and nuts</li>
+                    </ul>
+                    <!-- <li>Take supplements  that helps to burn fat faster or reduce hunger</li> -->
+                </section>
+            </div>
+        </div>
+    </main>
+    <script src="../bmi.js"></script>
+</body>
+</html>
