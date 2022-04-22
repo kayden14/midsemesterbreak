@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collation of people</title>
+</head>
+
+<body>
+    <style>
+       .div2 {
+            display: grid;
+            grid-template-columns: repeat( 2, 1fr);
+            
+        }
+        p{
+            
+            height: 20vh;
+            font-style: italic;
+            font-family: verdana;
+        }
+        img{
+            height: 20vh;
+            width: 40vh;
+            padding-right: 8em;
+            padding-top: 1em;
+        }
+    </style>
+
+
+    <main>
+        <div>
+            <h1>Our Members</h1>
+        </div>
+        <div class="div2">
+            <section></section>
+            <section></section>
+        </div>
+    </main>
+
+    <script>
+        const person = {
+            name: ['Faith', 'Samantha', 'Kelvin', 'Susan', 'Kemi'],
+            nickName: ['Kay', 'Sam', 'BlaqNerd', 'Schone', 'daisy'],
+            age: [17, 19, 18, 20, 21],
+            gender: ['Female', 'Female', 'Male', 'Female', 'Female'],
+            state: ['Delta', 'Edo', 'Delta', 'Ogun', 'Rivers'],
+            pics: ["../../images/pic1.jpg","../../images/pic2.png","../../images/pic3.jpg","../../images/pic4.jpg","../../images/pic6.jpg"],
+            quote: ['You only live once, but if you do it right, once is enough.',
+                'In three words I can sum up everything I"ve learned about life: it goes on.',
+                'To live is the rarest thing in the world. Most people exist, that is all.',
+                'It is better to be hated for what you are than to be loved for what you are not.',
+                'It does not do to dwell on dreams and forget to live.'],
+        }
+
+        const textHolder = document.querySelector('section:first-of-type')
+        const myPics = document.querySelector('section:last-of-type')
+        const heading = document.querySelector('h1')
+
+        let changeText = () => {
+            heading.style.fontSize = '1.5rem'
+            heading.style.color = 'rgb($(Math.floor(Math.random()*255)),$(Math.floor(Math.random()*255)),$(Math.floor(Math.random()*255)))'
+
+
+
+            let paragraph = document.createElement('p')
+            paragraph.textContent = `my name is ${person.name[Math.floor(Math.random()*4)]},am a ${person.gender[Math.floor(Math.random()*4)]}, 
+             my friends call me ${person.nickName[Math.floor(Math.random()*4)]}, I am ${ person.age[Math.floor(Math.random()*4)] } years old.
+             I am a well known indigene of ${ person.state[Math.floor(Math.random()*4)] } state,
+                my favourite quote is ${ person.quote[Math.floor(Math.random()*4)] }`
+
+            textHolder.appendChild(paragraph)
+            let img = document.createElement('img')
+            let att = document.createAttribute('src')
+            att.value = `${person.pics[Math.floor(Math.random()*4)]}`
+
+        myPics.appendChild(img)
+        img.setAttributeNode(att)
+        heading.append(h1)
+
+
+        }
+      heading.addEventListener('click', changeText)
+    </script>
+
+</body>
+
+</html>
